@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace Week3Task
 {
@@ -7,20 +8,28 @@ namespace Week3Task
     {
         static void Main(string[] args)
         {
-            MyStack<int> testStack = new MyStack<int>();
-            Console.WriteLine(testStack.isEmpty());
-            testStack.Push(4);
-            testStack.Push(9);
-            testStack.Push(35);
-            Console.WriteLine(testStack.isEmpty());
-            testStack.Print();
+            MyLinkedList<string> myList = new MyLinkedList<string>();
+            Console.WriteLine(myList.Add("Diagon Alley"));
+            Console.WriteLine(myList.Add("Flourish and Blotts"));
+            Console.WriteLine(myList.Add("The Leaky Cauldron"));
+            Console.WriteLine(myList.Check("Diagon"));
+            Console.WriteLine(myList.Add("Chamber of Secrets"));
+            Console.WriteLine(myList.IndexOf("Chamber of Secrets"));
+            Console.WriteLine(myList.Insert(1,"Salazar Slytherin"));
+            Console.WriteLine(myList.IndexOf("Salazar Slytherin")  + " slytherin");
+            Console.WriteLine(myList.IndexOf("Flourish and Blotts") + " flourish");
+            Console.WriteLine(myList.Insert(0, "Prisoner of Azkaban"));
+            Console.WriteLine(myList.IndexOf("Prisoner of Azkaban"));
+            Console.WriteLine(myList.IndexOf("Diagon Alley"));
+            myList.Print();
             Console.WriteLine();
-            Console.WriteLine(testStack.Pop());
-            Console.WriteLine();
-            testStack.Print();
-            Console.WriteLine(testStack.Size());
-            Console.WriteLine(testStack.Peek());
-
+            myList.Remove(4);
+            myList.Print();
+            Console.WriteLine(myList.IndexOf("Flourish and Blotts"));
+            Console.WriteLine(myList.IndexOf("Chamber of Secrets"));
+            //Console.WriteLine(myList.IndexOf("Salazar Slytherin"));
         }
+
+       
     }
 }
