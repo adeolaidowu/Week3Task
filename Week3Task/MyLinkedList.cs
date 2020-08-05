@@ -6,6 +6,7 @@ using System.Text;
 
 namespace Week3Task
 {
+    // NODE CLASS
     class Node<T>
     {
         public Node(T val)
@@ -28,6 +29,8 @@ namespace Week3Task
         public Node<T> Previous { get; set; }
 
     }
+
+    // DOUBLY LINKED LIST CLASS
     class MyLinkedList<T>
     {
         public Node<T> Head { get; private set; }
@@ -40,7 +43,7 @@ namespace Week3Task
             Tail = null;
             Size = 0;
         }
-
+        // METHOD TO ADD NODE TO LINKED LIST
         public int Add(T val)
         {
             Node<T> newNode = new Node<T>(val);
@@ -57,12 +60,14 @@ namespace Week3Task
             Size++;
             return Size;
         }
+        // METHOD TO CHECK FOR VALUE IN LIST
         public bool Check(T val)
         {
             if (Size == 0) return false;
             if (Search(val) != null) return true;
             return false;
         }
+        // METHOD TO FIND VALUE IN LIST
         public Node<T> Search(T val)
         {
             Node<T> current = Head;
@@ -73,7 +78,7 @@ namespace Week3Task
             }
             return null;
         }
-
+        // METHOD TO RETURN NODE AT PARTICULAR INDEX
         public Node<T> Get(int index)
         {
             Node<T> current = Head;
@@ -87,16 +92,18 @@ namespace Week3Task
             return null;
         }
 
+        // CHECK IF LIST IS EMPTY
         public bool isEmpty()
         {
             return Size == 0;
         }
 
+        // GET SIZE OF LIST
         public int GetSize()
         {
             return Size;
         }
-
+        //METHOD TO FIND INDEX OF A VALUE IN LIST
         public int IndexOf(T val)
         {
             Node<T> currentNode = Head;
@@ -110,6 +117,7 @@ namespace Week3Task
             return -1;
         }
 
+        // METHOD TO INSERT NODE INTO LIST
         public bool Insert(int index, T val)
         {
             Node<T> newNode = new Node<T>(val);
@@ -152,6 +160,7 @@ namespace Week3Task
             
         }
 
+        // METHOD TO REMOVE NODE FROM LIST
         public void Remove(int index)
         {
             Node<T> current = Head;
@@ -166,6 +175,8 @@ namespace Week3Task
             prev.Next = next;
             next.Previous = prev;
         }
+
+        // LOG OUT LIST ITEMS
         public void Print()
         {
             Node<T> currentNode = Head;
