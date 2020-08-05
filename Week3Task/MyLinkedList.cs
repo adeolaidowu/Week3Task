@@ -44,7 +44,7 @@ namespace Week3Task
             Size = 0;
         }
         // METHOD TO ADD NODE TO LINKED LIST
-        public int Add(T val)
+        public int AddAtEnd(T val)
         {
             Node<T> newNode = new Node<T>(val);
             if (Head == null)
@@ -68,12 +68,12 @@ namespace Week3Task
             return false;
         }
         // METHOD TO FIND VALUE IN LIST
-        public Node<T> Search(T val)
+        public object Search(T val)
         {
             Node<T> current = Head;
             while(current != null)
             {
-                if (current.Value.Equals(val)) return current;
+                if (current.Value.Equals(val)) return current.Value;
                 else current = current.Next;
             }
             return null;

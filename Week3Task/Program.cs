@@ -27,6 +27,8 @@ namespace Week3Task
             myList.Print();
             Console.WriteLine(myList.IndexOf("Flourish and Blotts"));
             Console.WriteLine(myList.IndexOf("Chamber of Secrets"));
+            Console.WriteLine();
+            Console.WriteLine(myList.Search("Chamber of Secrets"));
             //Console.WriteLine(myList.IndexOf("Salazar Slytherin"));
         }
 
